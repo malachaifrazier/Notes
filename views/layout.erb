@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title><%= @title + " | Recall" %> </title>
+	<link href="/reset.css" rel="stylesheet">  
+  	<link href="/style.css" rel="stylesheet">  
+</head>
+<body>
+	<header>
+		<hgroup>
+			<h1><a href="/">Recall</a></h1>
+			<h2>You, sir, are too busy to 'member stuff.</h2>
+		</hgroup>
+	</header>
+
+	<div id="main">
+		<%= yield %>
+	</div>
+
+	<footer>
+		<p><small>A practice app from <a href="http://net.tutsplus.com">Nettuts+ </small></p>
+		<p><small>Built by <a href="http://about.me/malachai">Malachai Frazier</a></small></p>
+	</footer>
+
+</body>
+</html>
