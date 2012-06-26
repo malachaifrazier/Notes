@@ -37,6 +37,13 @@ get "/" do
 	erb :home
 end
 
+# RSS feed
+
+get '/rss.xml' do
+	@notes = Note.all :order => :id.desc
+	builder :rss
+end
+
 #POST Route to add Notes to the database
 
 post "/" do
