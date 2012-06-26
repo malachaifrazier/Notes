@@ -3,6 +3,11 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
+require 'rack-flash'
+require 'sinatra/redirect_with_flash'
+
+enable :sessions
+use Rack::Flash, :sweep => true
 
 SITE_TITLE = "Recall"
 SITE_DESCRIPTION = "You, sir, are too busy to member stuff." 
