@@ -20,6 +20,14 @@ end
 
 DataMapper.finalize.auto_upgrade!
 
+# Helper
+
+helpers do
+	include Rack::Utils
+	alias_method :h, :escape_html
+end
+
+
 # Routes
 # Retrieve all Notes from the database
 
