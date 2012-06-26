@@ -4,6 +4,8 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
+SITE_TITLE = "Recall"
+SITE_DESCRIPTION = "You, sir, are too busy to member stuff." 
 
 # Define our DB with the ORM
 
