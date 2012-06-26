@@ -6,17 +6,19 @@ require 'data_mapper'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 
+SITE_TITLE = "Recall"
+SITE_DESCRIPTION = "You, sir, are too busy to member stuff." 
+
+
 enable :sessions
 use Rack::Flash, :sweep => true
 
-SITE_TITLE = "Recall"
-SITE_DESCRIPTION = "You, sir, are too busy to member stuff." 
 
 # Define our DB with the ORM
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 
-class Note
+class Note 
 	include DataMapper::Resource
 	property :id, Serial
 	property :content, Text, :required => true
@@ -41,6 +43,9 @@ end
 get "/" do 
 	@notes = Note.all :order => :id.desc
 	@title = "All Notes"
+	if @notes.empty?
+		flash[:error] = "No notes, thug. Add some below!"
+	end
 	erb :home
 end
 
