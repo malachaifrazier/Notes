@@ -6,8 +6,8 @@ require 'data_mapper'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 
-SITE_TITLE = "Recall"
-SITE_DESCRIPTION = "You, sir, are too busy to member stuff." 
+SITE_TITLE = "Thug Notes"
+SITE_DESCRIPTION = "Thugs are too busy to 'member stuff." 
 
 
 enable :sessions
@@ -100,11 +100,11 @@ end
 
 get '/:id/delete' do
 	@note = Note.get params[:id]
-	@title = "Confirm deletion of this Note ##{params[:id]}"	
+	@title = "Straight up delete this thug ass note ##{params[:id]}"	
 	if @note
-		erb :edit
+		erb :delete
 	else
-		redirect '/', :error => "Nope. Can't find that note, cheif."
+		redirect '/', :error => "Nope. Can't find that note, chief."
 	end
 end
 
