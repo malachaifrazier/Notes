@@ -1,5 +1,4 @@
-# http://net.tutsplus.com/
-#tutorials/ruby/singing-with-sinatra-the-recall-app-2/
+# http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-recall-app-2/
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
@@ -13,10 +12,17 @@ SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
 enable :sessions
 use Rack::Flash, :sweep => true
 
+# Display some logs
+
+DataMapper::Logger.new($stdout, :debug)
 
 # Define our DB with the ORM
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+
+######
+# Class/Models
+######
 
 class Note 
 	include DataMapper::Resource
@@ -25,6 +31,7 @@ class Note
 	property :complete, Boolean, :required => true, :default => false
 	property :created_at, DateTime
 	property :updated_at, DateTime
+	property :deleted_at, ParanoidDateTime #Don't REALLY destroy a table row
 end
 
 DataMapper.finalize.auto_upgrade!
