@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
+require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 
@@ -127,6 +128,9 @@ delete '/:id' do
 end
 
 # Mark as COMPLETE without going to EDIT View
+####
+# TODO=> :notice should vanish when no longer complete
+####
 
 get '/:id/complete' do
 	n = Note.get params[:id]
