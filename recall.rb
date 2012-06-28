@@ -52,13 +52,14 @@ get "/" do
 	@notes = Note.all :order => :id.desc
 	@title = "All Notes"
 	if @notes.empty?
-		flash[:error] = "No notes, thug. Add some below!"
+		flash.now[:error] = "No notes, thug. Add some below!"
 	end
 	erb :home
 end
 
-# RSS feed
-
+##########
+## RSS feed
+##########
 get '/rss.xml' do
 	@notes = Note.all :order => :id.desc
 	builder :rss
