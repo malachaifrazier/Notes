@@ -6,6 +6,7 @@ require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 
+
 SITE_TITLE = "Thug Notes"
 SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
 
@@ -71,9 +72,11 @@ end
 
 post "/" do
   n = Note.new
-  n.content = params[:content]
-  n.created_at = Time.now.strftime("%m/%d/%Y %I:%M%p")
-  n.updated_at = Time.now.strftime("%m/%d/%Y %I:%M%p")
+  n.attributes = {   
+      :content => params[:content],
+      :created_at => Time.now, #.strftime("%m/%d/%Y %I:%M%p")
+      :updated_at => Time.now #.strftime("%m/%d/%Y %I:%M%p")
+  } 
   if n.save
     redirect '/', :notice => 'Note created successfully, thug.'
   else
@@ -97,9 +100,14 @@ end
 
 put '/:id' do
   n = Note.get params[:id]
-  n.content = params[:content]
-  n.complete = params[:complete] ? 1 : 0
-  n.updated_at = Time.now.strftime("%m/%d/%Y %I:%M%p")
+  unless n
+    redirect '/', :error => "No Note to be found, son."
+  end
+  n.attributes = {
+      :content => params[:content],
+      :complete => params[:complete] ? 1 : 0,
+      :updated_at => Time.now #.strftime("%m/%d/%Y %I:%M%p")
+  }
   if n.save
     redirect '/', :notice => "Note updated thuggishly."
   else
@@ -136,8 +144,13 @@ end
 
 get '/:id/complete' do
   n = Note.get params[:id]
-  n.complete = n.complete ? 0 : 1
-  n.updated_at = Time.now.strftime("%m/%d/%Y %I:%M%p")
+  unless n
+    redirect '/', :error => "Hells naw. Error, son."
+  end
+  n.attributes = {
+      :complete => n.complete ? 0 : 1,
+      :updated_at => Time.now #.strftime("%m/%d/%Y %I:%M%p")
+  }
   if n.save
     redirect '/', :notice => "Completed? That's whats up."
   else
