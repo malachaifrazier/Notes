@@ -52,7 +52,7 @@ get "/" do
 	@notes = Note.all :order => :id.desc
 	@title = "All Notes"
 	if @notes.empty?
-		flash.now[:error] = "No notes, thug. Add some below!"
+		flash[:error] = "No notes, thug. Add some below!"
 	end
 	erb :home
 end
