@@ -44,9 +44,11 @@ helpers do
   alias_method :h, :escape_html
 end
 
+##########
+## Le Routes, :notice fadesOut via jQuery
+## Retrieve all Notes from the database
+#########
 
-# Routes
-# Retrieve all Notes from the database
 
 get "/" do
   @notes = Note.all :order => :id.desc
@@ -128,9 +130,8 @@ delete '/:id' do
   end
 end
 
-# Mark as COMPLETE without going to EDIT View
 ####
-# TODO=> :notice should vanish when no longer complete
+# Mark as COMPLETE without going to EDIT View
 ####
 
 get '/:id/complete' do
