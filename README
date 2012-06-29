@@ -2,3 +2,28 @@ www.about.me/malachai
 
 
 Practice application using Sinatra
+
+TODO:
+
+	xAdd jQuery @ Google CDN
+	xAdd custom Flash Messages
+	xAdd Notice Timeout
+
+Buy a domin and publish (Heroku?)
+Add flavor to CSS(3?)
+Add sidebar w/ finished notes (display success)
+Add "AboutUs" Page
+Add "Contact Me" Page
+Add "How to Use" Tutorial
+Add Cool footer?
+Add Cool Nav Bar?
+Add "Mobile"/"Responsive" design?
+
+Move Models around to make app more readable
+
+Add landing page (done w/ Auth)
+Feature: Delete multiple notes from single view
+Feature: Delete All 
+Feature: Custom Auth
+Feature: Auth Facebook, Twitter, Google? Too many?
+
