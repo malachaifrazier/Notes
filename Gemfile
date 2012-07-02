@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'thin', '>= 1.3.1'
+gem 'dm-postgres-adapter', '>= 1.2.0'
 gem 'dm-sqlite-adapter', '>= 1.2.0'
 gem 'rubygems-bundler', '>= 1.0.2'
 gem 'sinatra', '>= 1.3.2'

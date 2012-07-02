@@ -1,4 +1,5 @@
 require 'dm-sqlite-adapter'
+require 'dm-postgres-adapter'
 require 'bundler'
 require 'rubygems'
 require 'sinatra'
@@ -9,5 +10,5 @@ require 'sinatra/redirect_with_flash'
 
 Bundler.require
 
-
+require './recall.rb'
 run recall.rb
