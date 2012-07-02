@@ -21,7 +21,15 @@ DataMapper::Logger.new($stdout, :debug)
 
 # Define our DB with the ORM
 
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+######
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+######
+
+######
+# Heroku postgre
+######
+
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://#{Dir.pwd}/recall.db")
 
 ######
 # Class/Models

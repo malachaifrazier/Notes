@@ -9,5 +9,5 @@ require 'sinatra/redirect_with_flash'
 
 Bundler.require
 
-require './recall.rb'
+
 run recall.rb
