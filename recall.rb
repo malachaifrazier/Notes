@@ -1,6 +1,7 @@
 # http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-recall-app-2/
 require 'rubygems'
 require 'sinatra'
+require "bundler/setup"
 require 'data_mapper'
 require 'dm-timestamps'
 require 'rack-flash'
