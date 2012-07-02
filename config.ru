@@ -1,4 +1,4 @@
-
+require 'dm-sqlite-adapter'
 require 'bundler'
 require 'rubygems'
 require 'sinatra'
