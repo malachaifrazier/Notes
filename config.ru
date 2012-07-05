@@ -7,8 +7,9 @@ require 'data_mapper'
 require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
+require 'pg'
 
 Bundler.require
 
-require './recall.rb'
-run recall.rb
+require './recall'
+run Sinatra::Application

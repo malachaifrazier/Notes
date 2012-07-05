@@ -6,6 +6,7 @@ require 'data_mapper'
 require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
+require 'pg'
 
 
 SITE_TITLE = "Thug Notes"
@@ -22,14 +23,19 @@ DataMapper::Logger.new($stdout, :debug)
 # Define our DB with the ORM
 
 ######
-# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+ #DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 ######
 
 ######
-# Heroku postgre
+# Heroku postgre port 5432?
 ######
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://#{Dir.pwd}/recall.db")
+# DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://#{Dir.pwd}/recall2.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://postgres:danladi@localhost/postgres")
+# DataMapper.setup(:default, 'postgres://user:password@hostname/database'
+# A Postgres connection:
+#DataMapper.setup(:default, 'postgres://user:password@hostname/database')
+
 
 ######
 # Class/Models
