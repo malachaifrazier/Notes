@@ -31,7 +31,7 @@ DataMapper::Logger.new($stdout, :debug)
 ######
 
 # DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://#{Dir.pwd}/recall2.db")
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://postgres:danladi@localhost/postgres")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://postgres:danladi@localhost:5433/postgres")
 # DataMapper.setup(:default, 'postgres://user:password@hostname/database'
 # A Postgres connection:
 #DataMapper.setup(:default, 'postgres://user:password@hostname/database')
