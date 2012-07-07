@@ -1,7 +1,9 @@
 www.about.me/malachai
 
+ThugNotes!
 
-Practice application using Sinatra
+
+`Practice application using Sinatra.`
 
 TODO:
 
@@ -9,12 +11,12 @@ TODO:
 	xAdd custom Flash Messages
 	xAdd Notice Timeout
 	xAdd Postgres
+	xPush to Heroku
 Make app Modular
 Set up an Amazon S3 account? 
-Buy a domin and publish (Heroku?)
 Add flavor to CSS(3?)
 Add sidebar w/ finished notes (display success)
-Add "AboutUs" Page
+Add "About Us" Page
 Add "Contact Me" Page
 Add "How to Use" Tutorial
 Add Cool footer?
