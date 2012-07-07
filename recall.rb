@@ -23,19 +23,15 @@ DataMapper::Logger.new($stdout, :debug)
 # Define our DB with the ORM
 
 ######
- #DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 ######
 
 ######
-# Heroku postgre port 5432?
+# Heroku postgre default port 5432?
 ######
 
-# DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://#{Dir.pwd}/recall2.db")
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://postgres:danladi@localhost:5433/postgres")
-# DataMapper.setup(:default, 'postgres://user:password@hostname/database'
-# A Postgres connection:
-#DataMapper.setup(:default, 'postgres://user:password@hostname/database')
-
+ 
 
 ######
 # Class/Models

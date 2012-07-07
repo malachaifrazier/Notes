@@ -8,6 +8,8 @@ TODO:
 	xAdd jQuery @ Google CDN
 	xAdd custom Flash Messages
 	xAdd Notice Timeout
+	xAdd Postgres
+Make app Modular
 Set up an Amazon S3 account? 
 Buy a domin and publish (Heroku?)
 Add flavor to CSS(3?)
@@ -24,6 +26,6 @@ Move Models around to make app more readable
 Add landing page (done w/ Auth)
 Feature: Delete multiple notes from single view
 Feature: Delete All 
-Feature: Custom Auth
-Feature: Auth Facebook, Twitter, Google? Too many?
+Feature: Custom Auth; Facebook, Twitter, Google? Too many? [OAuth]
+Use "dev.singly.com" cause it looks awesome and easy
 
