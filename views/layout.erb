@@ -7,14 +7,23 @@
   	<link href="/style.css" rel="stylesheet">  
   	<link href="/rss.xml" rel="alternative" type="application/rss+xml" >
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  	
+  	<!--Notices Fader Begin-->
   	<script type="text/javascript">
   		window.setTimeout(function() {  
     		$('.notice').slideUp().fadeOut();  
 			}, 2000); 
   	</script>
+  	<!--Notices Fader End-->
+  	
+  	<!--Bootstrap Popover Init-->
+  	<script type="text/javascript">
+  	$("a[rel=popover]").popover();
+  	</script>
+  	<!--Bootstrap Popover Ends-->
+
   	<!--Google Anylytics Begin-->
   	<script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33169972-1']);
   _gaq.push(['_trackPageview']);
@@ -24,16 +33,15 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+	</script>
+	<!--Google Anylytics End-->
 
-</script>
-<!--Google Anylytics End-->
+
 </head>
-
-
 
 <body>
 	<!-- Beta declaration -->
-<p> <strong>Beta</strong> </p>
+<p> <strong>&rarr; Beta &middot; Version &larr;</strong> </p>
 	
 	
 	<div class="body">
