@@ -4,8 +4,10 @@
 		<textarea name="content"> <%=h @note.content %> </textarea>
 		<input type="checkbox" name="complete" <%= "checked" if @note.complete %>>
 		<input type="submit">
+
 	</form>
-	<p><a href="/<%= @note.id %>/delete">Delete</a></p>
+
+	<p><a href="/<%= @note.id %>/delete">Delete Me</a></p>
 <% else %>
 	<p>Hmn. That Note cannot be found.</p>
 <% end %>
