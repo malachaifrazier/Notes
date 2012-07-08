@@ -85,8 +85,8 @@ post "/" do
   n = Note.new
   n.attributes = {   
       :content => params[:content],
-      :created_at => Time.now, #.strftime("%m/%d/%Y %I:%M%p")
-      :updated_at => Time.now #.strftime("%m/%d/%Y %I:%M%p")
+      :created_at => Time.now.strftime("%m/%d/%Y %I:%M%p"),
+      :updated_at => Time.now.strftime("%m/%d/%Y %I:%M%p")
   } 
   if n.save
     redirect '/', :notice => 'Note created successfully, thug.'
@@ -117,7 +117,7 @@ put '/:id' do
   n.attributes = {
       :content => params[:content],
       :complete => params[:complete] ? 1 : 0,
-      :updated_at => Time.now #.strftime("%m/%d/%Y %I:%M%p")
+      :updated_at => Time.now.strftime("%m/%d/%Y %I:%M%p")
   }
   if n.save
     redirect '/', :notice => "Note updated thuggishly."
@@ -160,7 +160,7 @@ get '/:id/complete' do
   end
   n.attributes = {
       :complete => n.complete ? 0 : 1,
-      :updated_at => Time.now #.strftime("%m/%d/%Y %I:%M%p")
+      :updated_at => Time.now.strftime("%m/%d/%Y %I:%M%p")
   }
   if n.save
     redirect '/', :notice => "Completed? That's whats up."
