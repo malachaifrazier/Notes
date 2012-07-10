@@ -12,18 +12,20 @@ TODO:
 	xAdd Notice Timeout
 	xAdd Postgres
 	xPush to Heroku
-Make app Modular
-Set up an Amazon S3 account? 
+
+?? Make app Modular
+?? Set up an Amazon S3 account? 
 Add flavor to CSS(3?)
-Add sidebar w/ finished notes (display success)
+?? Add sidebar w/ finished notes (display success)
 Add "About Us" Page
 Add "Contact Me" Page
 Add "How to Use" Tutorial
 Add Cool footer?
 Add Cool Nav Bar?
-Add "Mobile"/"Responsive" design?
+?? Add "Mobile"/"Responsive" design?
 
-Move Models around to make app more readable
+?? Move Models around to make app more readable
+--Why? This is a Classic Sinatra App
 
 Add landing page (done w/ Auth)
 Feature: Delete multiple notes from single view
