@@ -3,18 +3,23 @@
 <head>
 	<meta charset="utf8">
 	<title><%= "#{@title} | #{SITE_TITLE}" %> </title>
-	<link href="/reset.css" rel="stylesheet">  
-  	<link href="/style.css" rel="stylesheet">  
-  	<link href="/rss.xml" rel="alternative" type="application/rss+xml" >
+	<link href="/reset.css" rel="stylesheet"/>  
+  	<link href="/style.css" rel="stylesheet"/>   
+  	<link href="/rss.xml" rel="alternative" type="application/rss+xml" />
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  	<script type="text/javascript">
+  	
+  	<!--Notices Fader Begin-->
+  	<script type="text/javascript">  	
   		window.setTimeout(function() {  
     		$('.notice').slideUp().fadeOut();  
 			}, 2000); 
+    		$('.links').popover('show'); 
   	</script>
+  	<!--Notices Fader End-->
+  	
+
   	<!--Google Anylytics Begin-->
   	<script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-33169972-1']);
   _gaq.push(['_trackPageview']);
@@ -24,11 +29,19 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+	</script>
+	<!--Google Anylytics End-->
 
-</script>
-<!--Google Anylytics End-->
+
 </head>
+
 <body>
+	<!-- Beta declaration -->
+<p> <strong>&rarr; Beta &middot; Version &larr;</strong> </p>
+	
+	
+	<div class="body">
+	
 	<header>
 		<hgroup>
 			<h1><a href="/"><%= SITE_TITLE %></a></h1>
@@ -53,6 +66,8 @@
 		<p><small>Code is chillin' at <a href="https://github.com/malachaifrazier/Notes">Github</a></small></p>
 		<p><small>Tweet at me <a href="https://twitter.com/#!/captcussa">Here</small></p>
 	</footer>
+	
+	</div>
 
 </body>
 </html>
