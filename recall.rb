@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 # http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-recall-app-2/
 require 'rubygems'
 require 'sinatra'
@@ -7,7 +9,6 @@ require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 require 'pg'
-
 
 SITE_TITLE = "Thug Notes"
 SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
@@ -38,6 +39,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://postgres:danladi@l
 ######
 
 class Note
+
   include DataMapper::Resource
   property :id, Serial
   property :content, Text, :required => true
@@ -85,8 +87,8 @@ post "/" do
   n = Note.new
   n.attributes = {   
       :content => params[:content],
-      :created_at => Time.now.strftime("-%m-%d-%Y %I:%M%p"), #Time.now.strftime("%Y-%m-%d %H:%M")
-      :updated_at => Time.now.strftime("-%m-%d-%Y %I:%M%p")
+      :created_at => Time.now.strftime("-%m-%d-%Y %I:%M%p"),
+      :updated_at => Time.now.strftime("-%m-%d-%Y %I:%M%p") #Time.now.strftime("%Y-%m-%d %H:%M")
   } 
   if n.save
     redirect '/', :notice => 'Note created successfully, thug.'
