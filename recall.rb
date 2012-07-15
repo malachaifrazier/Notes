@@ -88,7 +88,7 @@ post "/" do
   n.attributes = {   
       :content => params[:content],
       :created_at => Time.now,
-      :updated_at => Time.now #Time.now.strftime("%Y-%m-%d %H:%M")
+      :updated_at => Time.now #Time.now.strftime("%Y-%m-%d %H:%M") doesen't work here. 
   } 
   if n.save
     redirect '/', :notice => 'Note created successfully, thug.'
