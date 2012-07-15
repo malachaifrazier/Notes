@@ -1,4 +1,3 @@
-require 'dm-sqlite-adapter'
 require 'dm-postgres-adapter'
 require 'bundler'
 require 'rubygems'
