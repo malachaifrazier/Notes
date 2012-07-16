@@ -47,6 +47,7 @@ class Note
   property :created_at, DateTime
   property :updated_at, DateTime
   property :deleted_at, ParanoidDateTime #Don't REALLY destroy a table row
+
 end
 
 DataMapper.finalize.auto_upgrade!
