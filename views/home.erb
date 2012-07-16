@@ -17,5 +17,16 @@
 			<a href="/<%= note.id %>/complete">&#8623;</a>
 		</p>
 		<p class="meta">Created: <%= note.created_at %></p>
+
+		<!-- Condititional  Updates-->
+		<p class="meta">
+		<% if note.updated_at != note.created_at %>
+		Updated At: <%= note.updated_at %>
+
+		<% else %>
+		Not updated yet...
+		<% end %>
+		</p>
+
 	</article>
 <% end %> 
