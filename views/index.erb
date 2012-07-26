@@ -1,7 +1,7 @@
 <h1>Singly OAuth Login</h1>
 <h2>
   <% if @profiles %>
-    Nice to see you again! Get your Thug Ass Notes <a href="/<%=:home%>">Here</a>
+    Nice to see you again! 
   <% else %>
     Please connect a service
   <% end %>
@@ -14,7 +14,7 @@
   </p>
 <% end %>
 <ul>
-  <% %w[facebook twitter].each do |service| %>
+  <% %w[twitter].each do |service| %>
     <li>
       <%= service.capitalize %>
       <% if @profiles && @profiles[service] %>
@@ -26,3 +26,12 @@
     </li>
   <% end %>
 </ul>
+
+<!--If signed in FALSE
+
+-->
+
+
+<!--If signed in TRUE
+
+-->

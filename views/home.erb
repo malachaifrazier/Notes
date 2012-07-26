@@ -1,3 +1,48 @@
+
+
+<% unless session[:access_token] %>
+  <p>
+    Your access token is
+    <input type="text" value="<%= session[:access_token] %>" readonly="readonly" />
+    <a href="/logout">Log out</a>
+  </p>
+
+<h1>Singly OAuth Login</h1>
+<h2>
+  <% if @profiles %>
+    Nice to see you again! 
+  <% else %>
+    Please connect a service
+  <% end %>
+</h2>
+<% if session[:access_token] %>
+  <p>
+    Your access token is
+    <input type="text" value="<%= session[:access_token] %>" readonly="readonly" />
+    <a href="/logout">Log out</a>
+  </p>
+<% end %>
+<ul>
+  <% %w[twitter].each do |service| %>
+    <li>
+      <%= service.capitalize %>
+      <% if @profiles && @profiles[service] %>
+        is connected as <%= @profiles[service] %>.
+      <% else %>
+        is not connected.
+        <a href="/auth/singly?service=<%= service %>">Connect</a>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+  
+  <%else%>
+  <p>Not Logged in</p>
+
+
+
+
 <section id="add">
 	<form action= "/" method= "post">
 		<textarea name="content" placeholder="Slap your note down here&hellip;"></textarea>
@@ -30,3 +75,6 @@
 
 	</article>
 <% end %> 
+
+<% end %> 
+

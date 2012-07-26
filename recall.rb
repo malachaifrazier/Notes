@@ -80,8 +80,8 @@ if session[:access_token]
     @profiles = HTTParty.get(profiles_url, {
                   :query => {:access_token => session[:access_token]}
                 }).parsed_response
+end
   erb :index
-else
 
   @notes = Note.all :order => :id.desc
   @title = "All Notes"
@@ -90,7 +90,7 @@ else
   end
   erb :home
 end
-end
+
 
 #########
 # Singly Stuff
@@ -143,7 +143,7 @@ get '/:id' do
   if @note
     erb :edit
   else
-    redirect '/', :error => "Nope. Can't find that note, champ."
+    flash[:error] = "get '/:id' do FAIL"
   end
 end
 
