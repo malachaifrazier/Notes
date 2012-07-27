@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-
 # http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-recall-app-2/
 require 'rubygems'
 require 'sinatra'
@@ -70,11 +69,11 @@ end
 ##########
 ## Le Routes, :notice fadesOut via jQuery
 ## Retrieve all Notes from the database
+## Thugging a little Singly OAuth
 #########
 
 
 get "/" do
-# A little Singly OAuth
 
 if session[:access_token]
     @profiles = HTTParty.get(profiles_url, {
