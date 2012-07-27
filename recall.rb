@@ -81,8 +81,7 @@ if session[:access_token]
                   :query => {:access_token => session[:access_token]}
                 }).parsed_response
 end
-  erb :index
-
+  #erb :index
   @notes = Note.all :order => :id.desc
   @title = "All Notes"
   if @notes.empty?
@@ -143,7 +142,7 @@ get '/:id' do
   if @note
     erb :edit
   else
-    flash[:error] = "get '/:id' do FAIL"
+    redirect '/', :error => "No Notes? No bueno."
   end
 end
 
