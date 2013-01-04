@@ -3,6 +3,11 @@ GEM
   specs:
     addressable (2.2.8)
     bcrypt-ruby (3.0.1)
+    better_errors (0.3.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
+    binding_of_caller (0.6.8)
+    coderay (1.0.8)
     daemons (1.1.9)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
@@ -52,37 +57,12 @@ GEM
       dm-core (~> 1.2.0)
     do_postgres (0.10.8)
       data_objects (= 0.10.8)
+    erubis (2.7.0)
     eventmachine (1.0.0)
-    faraday (0.8.1)
-      multipart-post (~> 1.1)
     fastercsv (1.5.5)
-    hashie (1.2.0)
-    httparty (0.8.3)
-      multi_json (~> 1.0)
-      multi_xml
-    httpauth (0.1)
     json (1.6.7)
     json_pure (1.6.7)
-    jwt (0.1.4)
-      json (>= 1.2.4)
     multi_json (1.0.4)
-    multi_xml (0.5.1)
-    multipart-post (1.1.5)
-    oauth2 (0.8.0)
-      faraday (~> 0.8)
-      httpauth (~> 0.1)
-      jwt (~> 0.1.4)
-      multi_json (~> 1.0)
-      rack (~> 1.2)
-    omniauth (1.1.0)
-      hashie (~> 1.2)
-      rack
-    omniauth-oauth2 (1.1.0)
-      oauth2 (~> 0.8.0)
-      omniauth (~> 1.0)
-    omniauth-singly (0.0.1)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.0)
     pg (0.14.1)
     rack (1.4.1)
     rack-flash3 (1.0.3)
@@ -108,12 +88,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   data_mapper (>= 1.2.0)
   dm-postgres-adapter (>= 1.2.0)
   dm-timestamps (>= 1.2.0)
-  httparty
   json (>= 1.6.1)
-  omniauth-singly
   pg (>= 0.14.1)
   rack-flash3 (>= 1.0.3)
   rubygems-bundler (>= 1.1.0)

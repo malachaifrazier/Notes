@@ -9,6 +9,6 @@ gem 'dm-timestamps', '>= 1.2.0'
 gem 'rack-flash3', '>= 1.0.3'
 gem 'sinatra-redirect-with-flash', '>= 0.2.0'
 gem 'pg', '>= 0.14.1'
-gem 'omniauth-singly'
-gem 'httparty'
 gem 'json', '>= 1.6.1'
+gem "binding_of_caller"
+gem "better_errors"

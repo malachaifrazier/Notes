@@ -8,7 +8,6 @@ require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 require 'pg'
 
-stdout.sync = true
 
 Bundler.require
 

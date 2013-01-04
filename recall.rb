@@ -8,9 +8,9 @@ require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 require 'pg'
-require 'httparty'
-require 'sinatra-authentication'
 require 'json'
+require "better_errors"
+
 
 # Set Constants
 
@@ -20,7 +20,8 @@ SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
 
 enable :sessions
 use Rack::Flash, :sweep => true
-
+use BetterErrors::Middleware
+BetterErrors.application_root = File.expand_path("..", __FILE__)
 
 # Display some logs
 
