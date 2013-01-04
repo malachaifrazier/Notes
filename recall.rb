@@ -8,21 +8,19 @@ require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 require 'pg'
-require "omniauth-singly"
-require "httparty"
+require 'httparty'
+require 'sinatra-authentication'
+require 'json'
 
 # Set Constants
 
 SITE_TITLE = "Thug Notes"
 SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
-SINGLY_API_BASE = "https://api.singly.com"
 
 
 enable :sessions
 use Rack::Flash, :sweep => true
-use OmniAuth::Builder do
-  provider :singly, '4dcb776b5a813eaf84dec85544093d82', '8c0cadfc89f223c37ce7327117ded49a'
-end
+
 
 # Display some logs
 
@@ -74,13 +72,6 @@ end
 
 
 get "/" do
-
-if session[:access_token]
-    @profiles = HTTParty.get(profiles_url, {
-                  :query => {:access_token => session[:access_token]}
-                }).parsed_response
-end
-  #erb :index
   @notes = Note.all :order => :id.desc
   @title = "All Notes"
   if @notes.empty?
@@ -89,25 +80,6 @@ end
   erb :home
 end
 
-
-#########
-# Singly Stuff
-#########
-
-get "/auth/singly/callback" do
-  auth = request.env["omniauth.auth"]
-  session[:access_token] = auth.credentials.token
-  redirect "/"
-end
-
-get "/logout" do
-  session.clear
-  redirect "/"
-end
-
-def profiles_url
-  "#{SINGLY_API_BASE}/profiles"
-end
 
 ##########
 ## RSS feed

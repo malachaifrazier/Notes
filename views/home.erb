@@ -50,7 +50,20 @@
 	</form>
 </section>
 
+<% unless session[:access_token] %>
+<p> <%= @name %> </p>
+  <%else%>
+  <p>No Name son</p>
+  <p> Your access token is <input type="text" value="<%= session[:access_token] %>" readonly="readonly" /> </p>
 
+<% end %>
+
+
+<% if @name %>
+<p> <%= @name %> </p>
+  <%else%>
+  <p>No request</p>
+<% end %>
 
 <% @notes.each do |note| %>
 	<article <%= 'class= "complete"' if note.complete%> >
