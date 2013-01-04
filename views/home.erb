@@ -1,3 +1,48 @@
+
+
+<% unless session[:access_token] %>
+  
+<header>
+
+<h1>Welcome!</h1>
+  <hgroup>
+    <h3>
+      <% if @profiles %>
+        Nice to see you again! 
+      <% else %>
+        Built by <a href="http://twitter.com/#!/captcussa">Malachai Frazier I</a>
+      <% end %>
+    </h3>
+  </hgroup>
+
+</header>
+
+<% if session[:access_token] %>
+
+  <p> <a href="/logout">Log out</a> </p>
+
+<% end %>
+
+<header>
+
+  <% %w[twitter].each do |service| %>
+    <h2>
+      <%= service.capitalize %>
+      <% if @profiles && @profiles[service] %>
+        mightily connected as <%= @profiles[service] %>.
+      <% else %>
+        is not connected.
+        <a href="/auth/singly?service=<%= service %>">Psst...connect here.</a>
+      <% end %>
+    </h2>
+  <% end %>
+
+</header>
+  
+  <%else%>
+  
+
+
 <section id="add">
 	<form action= "/" method= "post">
 		<textarea name="content" placeholder="Slap your note down here&hellip;"></textarea>
@@ -5,7 +50,20 @@
 	</form>
 </section>
 
+<% unless session[:access_token] %>
+<p> <%= @name %> </p>
+  <%else%>
+  <p>No Name son</p>
+  <p> Your access token is <input type="text" value="<%= session[:access_token] %>" readonly="readonly" /> </p>
 
+<% end %>
+
+
+<% if @name %>
+<p> <%= @name %> </p>
+  <%else%>
+  <p>No request</p>
+<% end %>
 
 <% @notes.each do |note| %>
 	<article <%= 'class= "complete"' if note.complete%> >
@@ -30,3 +88,6 @@
 
 	</article>
 <% end %> 
+
+<% end %> 
+

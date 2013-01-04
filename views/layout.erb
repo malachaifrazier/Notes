@@ -78,13 +78,20 @@
 		    <p class="error"><%= flash[:error] %>  
 		<% end %>  
 		<%= yield %>
+
 	</div>
+
+<% if session[:access_token] %>
+
+
 
 	<footer>
 		<p><small>A practice app from <a href="http://net.tutsplus.com">Nettuts+</a></small></p>
 		<p><small>Built by <a href="http://about.me/malachai">Malachai Frazier</a></small></p>
 		<p><small>Tweet at me <a href="https://twitter.com/#!/captcussa">Here</small></p>
 	</footer>
+
+<% end %>
 	
 	</div>
 

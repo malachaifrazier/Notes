@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-
 # http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-recall-app-2/
 require 'rubygems'
 require 'sinatra'
@@ -9,6 +8,11 @@ require 'dm-timestamps'
 require 'rack-flash'
 require 'sinatra/redirect_with_flash'
 require 'pg'
+require 'httparty'
+require 'sinatra-authentication'
+require 'json'
+
+# Set Constants
 
 SITE_TITLE = "Thug Notes"
 SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
@@ -16,6 +20,7 @@ SITE_DESCRIPTION = "Thugs are too busy to 'member stuff."
 
 enable :sessions
 use Rack::Flash, :sweep => true
+
 
 # Display some logs
 
@@ -62,6 +67,7 @@ end
 ##########
 ## Le Routes, :notice fadesOut via jQuery
 ## Retrieve all Notes from the database
+## Thugging a little Singly OAuth
 #########
 
 
@@ -73,6 +79,7 @@ get "/" do
   end
   erb :home
 end
+
 
 ##########
 ## RSS feed
@@ -106,7 +113,7 @@ get '/:id' do
   if @note
     erb :edit
   else
-    redirect '/', :error => "Nope. Can't find that note, champ."
+    redirect '/', :error => "No Notes? No bueno."
   end
 end
 
